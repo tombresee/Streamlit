@@ -14,7 +14,7 @@ cwd = os.getcwd()
 css_file = os.path.join(cwd, 'streamlit', 'style.css')
 
 # Spotipy
-from spotipy_client import *
+##################from spotipy_client import *
 
 # Thanks to streamlitopedia for the following code snippet
 def img_to_bytes(img_path):
@@ -26,7 +26,7 @@ def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-SPR_SPOTIFY_URL = 'https://cdn-icons-png.flaticon.com/512/2111/2111624.png'
+#   SPR_SPOTIFY_URL = 'https://cdn-icons-png.flaticon.com/512/2111/2111624.png'
 
 # Initial page config
 st.set_page_config(
