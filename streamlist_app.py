@@ -15,8 +15,8 @@ import os
 import pandas as pd
 import numpy as np
 
-cwd = os.getcwd()
-css_file = os.path.join(cwd, 'streamlit', 'style.css')
+# cwd = os.getcwd()
+# css_file = os.path.join(cwd, 'streamlit', 'style.css')
 
 
 st.set_page_config(
@@ -25,7 +25,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",)
 
-local_css(css_file)
+# local_css(css_file)
 
 
 st.markdown("### 🎲 The Application")
