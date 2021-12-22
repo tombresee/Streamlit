@@ -16,9 +16,6 @@ import pandas as pd
 import numpy as np
 
 cwd = os.getcwd()
-print(cwd)
-
-
 css_file = os.path.join(cwd, 'streamlit', 'style.css')
 
 
