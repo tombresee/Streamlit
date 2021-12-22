@@ -1,67 +1,35 @@
-
-# TOM BRESEE
-
-# TRYING TO UNDERSTAND STREAMLIT
-
-
-from altair.vegalite.v4.api import value
+from vega_datasets import data
 import streamlit as st
-import streamlit.components.v1 as components
-from pathlib import Path
-import base64
-import pandas as pd
 import altair as alt
-import os
-import pandas as pd
-import numpy as np
 
-# cwd = os.getcwd()
-# css_file = os.path.join(cwd, 'streamlit', 'style.css')
+def main():
+    df = load_data()
+    page = st.sidebar.selectbox("Choose a page", ["Homepage", "Exploration"])
 
+    if page == "Homepage":
+        st.header("This is your data explorer.")
+        st.write("Please select a page on the left.")
+        st.write(df)
+    elif page == "Exploration":
+        st.title("Data Exploration")
+        x_axis = st.selectbox("Choose a variable for the x-axis", df.columns, index=3)
+        y_axis = st.selectbox("Choose a variable for the y-axis", df.columns, index=4)
+        visualize_data(df, x_axis, y_axis)
 
-st.set_page_config(
-    page_title='Tom Bresee - Initial Demo',
-    # page_icon=SPR_SPOTIFY_URL,
-    layout="wide",
-    initial_sidebar_state="expanded",)
+@st.cache
+def load_data():
+    df = data.cars()
+    return df
 
-# local_css(css_file)
+def visualize_data(df, x_axis, y_axis):
+    graph = alt.Chart(df).mark_circle(size=60).encode(
+        x=x_axis,
+        y=y_axis,
+        color='Origin',
+        tooltip=['Name', 'Origin', 'Horsepower', 'Miles_per_Gallon']
+    ).interactive()
 
+    st.write(graph)
 
-st.markdown("### My Application")
-
-st.markdown("This application is a Streamlit dashboard hosted on Heroku that can be used"
-            "to explore the results from board game matches that I tracked over the last year.")
-
-st.markdown("**General Statistics **")
-
-st.markdown("* This gives a general overview of the data including"
-            "frequency of games over time, most games played in a day, and longest break"
-            "between games.")
-
-
-x = st.slider('Select a value')
-
-st.write(x, 'squared is', x * x)
-
-
-df = pd.DataFrame(
-     np.random.randn(200, 3),
-     columns=['a', 'b', 'c'])
-
-c = alt.Chart(df).mark_circle().encode(
-     x='a', y='b', size='c', color='c', tooltip=['a', 'b', 'c'])
-
-st.altair_chart(c, use_container_width=True)
-
-
-
-import streamlit as st
-import pandas as pd
-
-df = pd.read_csv("https://github.com/MaartenGr/boardgame/raw/master/files/boardgame_new.csv").head()
-st.write(df)
-
-
-
-
+if __name__ == "__main__":
+    main()
