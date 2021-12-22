@@ -1,22 +1,41 @@
 
+# TOM BRESEE
+
+# TRYING TO UNDERSTAND STREAMLIT
+
+
+from altair.vegalite.v4.api import value
 import streamlit as st
-
+import streamlit.components.v1 as components
+from pathlib import Path
+import base64
 import pandas as pd
-
+import altair as alt
+import os
+import pandas as pd
 import numpy as np
 
-import altair as alt
+
+st.set_page_config(
+    page_title='Tom Bresee - Initial Demo',
+    # page_icon=SPR_SPOTIFY_URL,
+    layout="wide",
+    initial_sidebar_state="expanded",)
+
+local_css(css_file)
+
 
 st.markdown("### 🎲 The Application")
+
 st.markdown("This application is a Streamlit dashboard hosted on Heroku that can be used"
             "to explore the results from board game matches that I tracked over the last year.")
+
 st.markdown("**♟ General Statistics ♟**")
+
 st.markdown("* This gives a general overview of the data including"
             "frequency of games over time, most games played in a day, and longest break"
             "between games.")
 
-
-            
 
 x = st.slider('Select a value')
 
