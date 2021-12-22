@@ -15,6 +15,12 @@ import os
 import pandas as pd
 import numpy as np
 
+cwd = os.getcwd()
+print(cwd)
+
+
+css_file = os.path.join(cwd, 'streamlit', 'style.css')
+
 
 st.set_page_config(
     page_title='Tom Bresee - Initial Demo',
