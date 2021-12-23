@@ -63,7 +63,7 @@ def cs_sidebar():
 
 #     st.sidebar.markdown('''<small>[st.cheat_sheet v1.0.0](https://github.com/daniellewisDL/streamlit-cheat-sheet)  | Oct 2021</small>''', unsafe_allow_html=True)
 
-return None  # i think you have to return something, but None is fine 
+    return None  # i think you have to return something, but None is fine 
 #---------------------------------------------------------------------------------------------------------
 def cs_body():
 
