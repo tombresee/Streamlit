@@ -24,7 +24,7 @@ def img_to_bytes(img_path):
     encoded = base64.b64encode(img_bytes).decode()
     return encoded
 #---------------------------------------------------------------------------------------------------------
-# def cs_sidebar():
+def cs_sidebar():
 #     st.sidebar.header('Streamlit cheat sheet')
 #     st.sidebar.markdown('''
 # <small>Summary of the [docs](https://docs.streamlit.io/en/stable/api.html), as of [Streamlit v1.0.0](https://www.streamlit.io/).</small>
@@ -63,7 +63,7 @@ def img_to_bytes(img_path):
 
 #     st.sidebar.markdown('''<small>[st.cheat_sheet v1.0.0](https://github.com/daniellewisDL/streamlit-cheat-sheet)  | Oct 2021</small>''', unsafe_allow_html=True)
 
-#     return None  # i think you have to return something, but None is fine 
+return None  # i think you have to return something, but None is fine 
 #---------------------------------------------------------------------------------------------------------
 def cs_body():
 
