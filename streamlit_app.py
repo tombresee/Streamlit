@@ -24,63 +24,60 @@ def img_to_bytes(img_path):
     encoded = base64.b64encode(img_bytes).decode()
     return encoded
 #---------------------------------------------------------------------------------------------------------
-def cs_sidebar():
-    st.sidebar.header('Streamlit cheat sheet')
-    st.sidebar.markdown('''
-<small>Summary of the [docs](https://docs.streamlit.io/en/stable/api.html), as of [Streamlit v1.0.0](https://www.streamlit.io/).</small>
-    ''', unsafe_allow_html=True)
+# def cs_sidebar():
+#     st.sidebar.header('Streamlit cheat sheet')
+#     st.sidebar.markdown('''
+# <small>Summary of the [docs](https://docs.streamlit.io/en/stable/api.html), as of [Streamlit v1.0.0](https://www.streamlit.io/).</small>
+#     ''', unsafe_allow_html=True)
 
-    st.sidebar.markdown('__How to install and import__')
+#     st.sidebar.markdown('__How to install and import__')
 
-    st.sidebar.code('$ pip install streamlit')
+#     st.sidebar.code('$ pip install streamlit')
 
-    st.sidebar.markdown('Import convention')
+#     st.sidebar.markdown('Import convention')
 
-    st.sidebar.markdown('__Add widgets to sidebar__')
+#     st.sidebar.markdown('__Add widgets to sidebar__')
 
-    st.sidebar.markdown('__Command line__')
-
-
-    st.sidebar.code('''
-    $ streamlit --help
-    $ streamlit run your_script.py
-    $ streamlit hello
-    $ streamlit config show
-    $ streamlit cache clear
-    $ streamlit docs α β
-    $ streamlit --version
-    ''')
+#     st.sidebar.markdown('__Command line__')
 
 
-    st.sidebar.markdown('__Pre-release features__')
+#     st.sidebar.code('''
+#     $ streamlit --help
+#     $ streamlit run your_script.py
+#     $ streamlit hello
+#     $ streamlit config show
+#     $ streamlit cache clear
+#     $ streamlit docs α β
+#     $ streamlit --version
+#     ''')
 
-    st.sidebar.markdown('[Beta and experimental features](https://docs.streamlit.io/en/stable/api.html#beta-and-experimental-features)')
+#     st.sidebar.markdown('__Pre-release features__')
 
-    st.sidebar.code('''
-pip uninstall streamlit
-pip install streamlit-nightly --upgrade
-    ''')
+#     st.sidebar.markdown('[Beta and experimental features](https://docs.streamlit.io/en/stable/api.html#beta-and-experimental-features)')
+
+#     st.sidebar.code('''
+# pip uninstall streamlit
+# pip install streamlit-nightly --upgrade
+#     ''')
 
 
-    st.sidebar.markdown('''<small>[st.cheat_sheet v1.0.0](https://github.com/daniellewisDL/streamlit-cheat-sheet)  | Oct 2021</small>''', unsafe_allow_html=True)
+#     st.sidebar.markdown('''<small>[st.cheat_sheet v1.0.0](https://github.com/daniellewisDL/streamlit-cheat-sheet)  | Oct 2021</small>''', unsafe_allow_html=True)
 
-    return None
-
-##########################
-# Main body of cheat sheet
-##########################
-
+#     return None  # i think you have to return something, but None is fine 
+#---------------------------------------------------------------------------------------------------------
 def cs_body():
-    # Magic commands
 
     col1, col2, col3 = st.columns(3)
 
     col1.subheader('Magic commands')
+
     col1.code('''# Magic commands implicitly `st.write()`
 \'\'\' _This_ is some __Markdown__ \'\'\'
 a=3
 'dataframe:', data
     ''')
+
+
 
     # Display text
 
@@ -267,10 +264,11 @@ DeltaGenerator.add_rows(data)
 <small>[Components API reference](https://docs.streamlit.io/en/stable/develop_streamlit_components.html)</small><br>
 <small>[API cheat sheet](https://share.streamlit.io/daniellewisdl/streamlit-cheat-sheet/app.py)</small><br>
 ''', unsafe_allow_html=True)
-
+#---------------------------------------------------------------------------------------------------------
     return None
 
-# Run main()
+
+
 
 if __name__ == '__main__':
     main()
