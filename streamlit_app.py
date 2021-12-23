@@ -51,12 +51,16 @@ def cs_sidebar():
     $ streamlit --version
     ''')
 
+
     st.sidebar.markdown('__Pre-release features__')
+
     st.sidebar.markdown('[Beta and experimental features](https://docs.streamlit.io/en/stable/api.html#beta-and-experimental-features)')
+
     st.sidebar.code('''
 pip uninstall streamlit
 pip install streamlit-nightly --upgrade
     ''')
+
 
     st.sidebar.markdown('''<small>[st.cheat_sheet v1.0.0](https://github.com/daniellewisDL/streamlit-cheat-sheet)  | Oct 2021</small>''', unsafe_allow_html=True)
 
