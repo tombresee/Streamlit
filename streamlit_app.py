@@ -1,16 +1,5 @@
 """
-Streamlit Cheat Sheet
-App to summarise streamlit docs v1.0.0
-There is also an accompanying png and pdf version
-https://github.com/daniellewisDL/streamlit-cheat-sheet
-v1.0.0 October 2021
-Author:
-    @daniellewisDL : https://github.com/daniellewisDL
-Contributors:
-    arnaudmiribel : https://github.com/arnaudmiribel
-    akrolsmir : https://github.com/akrolsmir
-    nathancarter : https://github.com/nathancarter
-    epogrebnyak : https://github.com/epogrebnyak
+
 """
 
 import streamlit as st
@@ -31,8 +20,6 @@ def main():
 
     return None
 
-# Thanks to streamlitopedia for the following code snippet
-
 def img_to_bytes(img_path):
     img_bytes = Path(img_path).read_bytes()
     encoded = base64.b64encode(img_bytes).decode()
@@ -42,7 +29,7 @@ def img_to_bytes(img_path):
 
 def cs_sidebar():
 
-    st.sidebar.markdown('''[<img src='data:image/png;base64,{}' class='img-fluid' width=32 height=32>](https://streamlit.io/)'''.format(img_to_bytes("logomark_website.png")), unsafe_allow_html=True)
+    # st.sidebar.markdown('''[<img src='data:image/png;base64,{}' class='img-fluid' width=32 height=32>](https://streamlit.io/)'''.format(img_to_bytes("logomark_website.png")), unsafe_allow_html=True)
     st.sidebar.header('Streamlit cheat sheet')
 
     st.sidebar.markdown('''
