@@ -67,7 +67,7 @@ def cs_sidebar():
 #---------------------------------------------------------------------------------------------------------
 def cs_body():
 
-    col1, col2, col3 = st.columns(3)
+    col1, col2 = st.columns(2)
 
     col1.subheader('Magic commands')
 
@@ -201,8 +201,8 @@ st.echo()
 
     # Display progress and status
 
-    col3.subheader('Other key parts of the API')
-    col3.markdown('''
+    col2.subheader('Other key parts of the API')
+    col2.markdown('''
 <small>[State API](https://docs.streamlit.io/en/stable/session_state_api.html)</small><br>
 <small>[Theme option reference](https://docs.streamlit.io/en/stable/theme_options.html)</small><br>
 <small>[Components API reference](https://docs.streamlit.io/en/stable/develop_streamlit_components.html)</small><br>
