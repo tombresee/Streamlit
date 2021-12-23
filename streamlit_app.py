@@ -201,62 +201,6 @@ st.echo()
 
     # Display progress and status
 
-    col3.subheader('Display progress and status')
-    col3.code('''
-st.progress(progress_variable_1_to_100)
-st.spinner()
->>> with st.spinner(text='In progress'):
->>>     time.sleep(5)
->>>     st.success('Done')
-st.balloons()
-st.error('Error message')
-st.warning('Warning message')
-st.info('Info message')
-st.success('Success message')
-st.exception(e)
-    ''')
-
-    # Placeholders, help, and options
-
-    col3.subheader('Placeholders, help, and options')
-    col3.code('''
-st.empty()
->>> my_placeholder = st.empty()
->>> my_placeholder.text('Replaced!')
-st.help(pandas.DataFrame)
-st.get_option(key)
-st.set_option(key, value)
-st.set_page_config(layout='wide')
-    ''')
-
-    # Mutate data
-
-    col3.subheader('Mutate data')
-    col3.code('''
-DeltaGenerator.add_rows(data)
->>> my_table = st.table(df1)
->>> my_table.add_rows(df2)
->>> my_chart = st.line_chart(df1)
->>> my_chart.add_rows(df2)
-    ''')
-
-    # Optimize performance
-
-    col3.subheader('Optimize performance')
-    col3.code('''
-@st.cache
->>> @st.cache
-... def fetch_and_clean_data(url):
-...     # Mutate data at url
-...     return data
->>> # Executes d1 as first time
->>> d1 = fetch_and_clean_data(ref1)
->>> # Does not execute d1; returns cached value, d1==d2
->>> d2 = fetch_and_clean_data(ref1)
->>> # Different arg, so function d1 executes
->>> d3 = fetch_and_clean_data(ref2)
-    ''')
-
     col3.subheader('Other key parts of the API')
     col3.markdown('''
 <small>[State API](https://docs.streamlit.io/en/stable/session_state_api.html)</small><br>
