@@ -1,37 +1,31 @@
 """
-
+Tom Bresee
 """
 
+
+#---------------------------------------------------------------------------------------------------------
 import streamlit as st
 from pathlib import Path
 import base64
-
-# Initial page config
-
+#---------------------------------------------------------------------------------------------------------
 st.set_page_config(
-     page_title='Streamlit cheat sheet',
+     page_title='Reinforcement Learning Cheat Sheet',
      layout="wide",
-     initial_sidebar_state="expanded",
-)
-
+     initial_sidebar_state="expanded",)
+#---------------------------------------------------------------------------------------------------------
 def main():
     cs_sidebar()
     cs_body()
 
     return None
-
+#---------------------------------------------------------------------------------------------------------
 def img_to_bytes(img_path):
     img_bytes = Path(img_path).read_bytes()
     encoded = base64.b64encode(img_bytes).decode()
     return encoded
-
-# sidebar
-
+#---------------------------------------------------------------------------------------------------------
 def cs_sidebar():
-
-    # st.sidebar.markdown('''[<img src='data:image/png;base64,{}' class='img-fluid' width=32 height=32>](https://streamlit.io/)'''.format(img_to_bytes("logomark_website.png")), unsafe_allow_html=True)
     st.sidebar.header('Streamlit cheat sheet')
-
     st.sidebar.markdown('''
 <small>Summary of the [docs](https://docs.streamlit.io/en/stable/api.html), as of [Streamlit v1.0.0](https://www.streamlit.io/).</small>
     ''', unsafe_allow_html=True)
@@ -41,23 +35,20 @@ def cs_sidebar():
     st.sidebar.code('$ pip install streamlit')
 
     st.sidebar.markdown('Import convention')
-    st.sidebar.code('>>> import streamlit as st')
 
     st.sidebar.markdown('__Add widgets to sidebar__')
-    st.sidebar.code('''
-st.sidebar.<widget>
->>> a = st.sidebar.radio(\'R:\',[1,2])
-    ''')
 
     st.sidebar.markdown('__Command line__')
+
+
     st.sidebar.code('''
-$ streamlit --help
-$ streamlit run your_script.py
-$ streamlit hello
-$ streamlit config show
-$ streamlit cache clear
-$ streamlit docs
-$ streamlit --version
+    $ streamlit --help
+    $ streamlit run your_script.py
+    $ streamlit hello
+    $ streamlit config show
+    $ streamlit cache clear
+    $ streamlit docs α β
+    $ streamlit --version
     ''')
 
     st.sidebar.markdown('__Pre-release features__')
