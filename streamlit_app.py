@@ -21,7 +21,7 @@ st.set_page_config(
 #---------------------------------------------------------------------------------------------------------
 def main():
     cs_sidebar()
-    cs_body()
+    cs_body()  # right now, only using cs_body(), not sidebar yet... 
     return None
 #---------------------------------------------------------------------------------------------------------
 def img_to_bytes(img_path):
@@ -71,11 +71,11 @@ def cs_sidebar():
 #---------------------------------------------------------------------------------------------------------
 def cs_body():
 
+    # DEFINE 
     col1, col2 = st.columns(2)
     # col1, col2 = st.columns(2) is the generic form 
     # col1.image(original, use_column_width=True)
-
-
+#---------------------------------------------------------------------------------------------------------
     # SECTION
     col1.subheader('Display text')
     # or could do col1. header('Something')
@@ -93,20 +93,13 @@ def cs_body():
     st.write(['st', 'is <', 3])
     st.code('for i in range(8): foo()')
     ''')
-
-
-
-
-
+#---------------------------------------------------------------------------------------------------------
     # # SECTION
     # col1.subheader('Code Snippets')
     # col1.code("""
     # def hello():
     # print("Hello, Streamlit!"), language='python'""")
-
-
-
-
+#---------------------------------------------------------------------------------------------------------
     # SECTION
     # Display data
     col1.subheader('Display data')
@@ -116,9 +109,23 @@ def cs_body():
     st.json({'foo':'bar','fu':'ba'})
     st.metric(label="Temp", value="273 K", delta="1.2 K")
     ''')
+#---------------------------------------------------------------------------------------------------------
+    # SECTION
+    # charts 
+    col1.subheader('Display chart 1')
+    col1.code('''
+    import pandas as pd
+    import numpy as np
+    import altair as alt
 
+    df = pd.DataFrame(
+         np.random.randn(200, 3),
+         columns=['a', 'b', 'c'])
 
-
+    c = alt.Chart(df).mark_circle().encode(
+       x='a', y='b', size='c', color='c', tooltip=['a', 'b', 'c'])
+    st.write(c)''')
+#---------------------------------------------------------------------------------------------------------
     # SECTION
     # Display charts
     col1.subheader('Display charts')
@@ -136,9 +143,7 @@ def cs_body():
     st.graphviz_chart(data)
     st.map(data)
     ''')
-
-
-
+#---------------------------------------------------------------------------------------------------------
     # SECTION
     # Display media
     col1.subheader('Display media')
@@ -147,9 +152,7 @@ def cs_body():
     st.audio(data)
     st.video(data)
     ''')
-
-
-
+#---------------------------------------------------------------------------------------------------------
     # SECTION
     # Display interactive widgets
     col2.subheader('Display interactive widgets')
@@ -177,18 +180,14 @@ def cs_body():
     >>> my_slider_val = st.slider('Quinn Mallory', 1, 88)
     >>> st.write(slider_val)
     ''')
-
-
-
+#---------------------------------------------------------------------------------------------------------
     # SECTION
     # Control flow
     col2.subheader('Control flow')
     col2.code('''
     st.stop()
     ''')
-
-
-
+#---------------------------------------------------------------------------------------------------------
     # SECTION
     # Lay out your app
     col2.subheader('Lay out your app')
@@ -210,18 +209,18 @@ def cs_body():
     >>> 	text_input = st.text_input(label='Enter some text')
     >>> 	submit_button = st.form_submit_button(label='Submit')
     ''')
-
+#---------------------------------------------------------------------------------------------------------
+    # SECTION
     # Display code
-
     col2.subheader('Display code')
     col2.code('''
     st.echo()
     >>> with st.echo():
     >>>     st.write('Code will be executed and printed')
     ''')
-
+#---------------------------------------------------------------------------------------------------------
+    # SECTION
     # Display progress and status
-
     col2.subheader('Other key parts of the API')
     col2.markdown('''
     <small>[State API](https://docs.streamlit.io/en/stable/session_state_api.html)</small><br>
@@ -231,11 +230,23 @@ def cs_body():
     ''', unsafe_allow_html=True)
 #---------------------------------------------------------------------------------------------------------
     return None
+#---------------------------------------------------------------------------------------------------------
 
 
-
+#---------------------------------------------------------------------------------------------------------
 if __name__ == '__main__':
     main()
+#---------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
 
 
 
