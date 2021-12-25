@@ -15,14 +15,13 @@ from pathlib import Path
 import base64
 #---------------------------------------------------------------------------------------------------------
 st.set_page_config(
-     page_title='Reinforcement Learning Cheat Sheet',
+     page_title='Streamlit Commands',
      layout="wide",
      initial_sidebar_state="expanded",)
 #---------------------------------------------------------------------------------------------------------
 def main():
     cs_sidebar()
     cs_body()
-
     return None
 #---------------------------------------------------------------------------------------------------------
 def img_to_bytes(img_path):
@@ -33,7 +32,7 @@ def img_to_bytes(img_path):
 def cs_sidebar():
 #     st.sidebar.header('Streamlit cheat sheet')
 #     st.sidebar.markdown('''
-# <small>Summary of the [docs](https://docs.streamlit.io/en/stable/api.html), as of [Streamlit v1.0.0](https://www.streamlit.io/).</small>
+#     <small>Summary of the [docs](https://docs.streamlit.io/en/stable/api.html), as of [Streamlit v1.0.0](https://www.streamlit.io/).</small>
 #     ''', unsafe_allow_html=True)
 
 #     st.sidebar.markdown('__How to install and import__')
@@ -45,7 +44,6 @@ def cs_sidebar():
 #     st.sidebar.markdown('__Add widgets to sidebar__')
 
 #     st.sidebar.markdown('__Command line__')
-
 
 #     st.sidebar.code('''
 #     $ streamlit --help
@@ -66,7 +64,6 @@ def cs_sidebar():
 # pip install streamlit-nightly --upgrade
 #     ''')
 
-
 #     st.sidebar.markdown('''<small>[st.cheat_sheet v1.0.0](https://github.com/daniellewisDL/streamlit-cheat-sheet)  | Oct 2021</small>''', unsafe_allow_html=True)
 
     return None  # i think you have to return something, but None is fine 
@@ -78,20 +75,10 @@ def cs_body():
     # col1, col2 = st.columns(2) is the generic form 
     # col1.image(original, use_column_width=True)
 
-    col1.subheader('Magic commands')
-
-    col1.code('''# Magic commands implicitly `st.write()`
-    \'\'\' _This_ is some __Markdown__ \'\'\'
-    a=3
-    'dataframe:', data
-    ''')
 
 
 
-
-
-    # Display text
-
+    # SECTION
     col1.subheader('Display text')
     # or could do col1. header('Something')
     col1.code('''
