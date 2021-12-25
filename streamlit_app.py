@@ -76,28 +76,38 @@ def cs_body():
     # col1.image(original, use_column_width=True)
 
 
-
-
     # SECTION
     col1.subheader('Display text')
     # or could do col1. header('Something')
+    # i am writting everything into code snippets, nice clean format 
     col1.code('''
-    st.text('Fixed width text')
-    st.markdown('_Markdown_') # see *
-    st.caption('Balloons. Hundreds of them...')
-    st.latex(r\'\'\' e^{i\pi} + 1 = 0 \'\'\')
-    st.write('Most objects') # df, err, func, keras!
-    st.write(['st', 'is <', 3]) # see *
     st.title('My title')
     st.header('My header')
-    st.subheader('My sub')
+    st.subheader('This is a subheader')
+    st.text('Fixed width text')
+    st.markdown('_Markdown_') # markdown formatted text
+    st.markdown('Streamlit is **_really_ cool**.') 
+    st.caption('My image caption')
+    st.latex(r\'\'\' e^{i\pi} + 1 = 0 \'\'\')
+    st.write('anything') # words, dataframe, plots
+    st.write(['st', 'is <', 3])
     st.code('for i in range(8): foo()')
-    * optional kwarg unsafe_allow_html = True
     ''')
 
 
-    # Display data
 
+    # SECTION
+    col1.subheader('Code Snippets')
+    col1.code('''
+    code = '''def hello():
+    print("Hello, Streamlit!")'''
+    st.code(code, language='python')
+    ''')
+
+
+
+    # SECTION
+    # Display data
     col1.subheader('Display data')
     col1.code('''
     st.dataframe(my_dataframe)
