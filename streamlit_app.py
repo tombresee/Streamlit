@@ -96,11 +96,11 @@ def cs_body():
 
 
 
-    # SECTION
-    col1.subheader('Code Snippets')
-    col1.code("""
-    def hello():
-    print("Hello, Streamlit!"), language='python'""")
+    # # SECTION
+    # col1.subheader('Code Snippets')
+    # col1.code("""
+    # def hello():
+    # print("Hello, Streamlit!"), language='python'""")
 
     
 
