@@ -88,7 +88,7 @@ def cs_body():
     st.markdown('_Markdown_') # markdown formatted text
     st.markdown('Streamlit is **_really_ cool**.') 
     st.caption('My image caption')
-    st.latex(r\'\'\' e^{i\pi} + 1 = 0 \'\'\')
+    # st.latex(r\'\'\' e^{i\pi} + 1 = 0 \'\'\')
     st.write('anything') # words, dataframe, plots
     st.write(['st', 'is <', 3])
     st.code('for i in range(8): foo()')
@@ -107,8 +107,6 @@ def cs_body():
 
 
 
-
-
     # SECTION
     # Display data
     col1.subheader('Display data')
@@ -119,8 +117,10 @@ def cs_body():
     st.metric(label="Temp", value="273 K", delta="1.2 K")
     ''')
 
-    # Display charts
 
+
+    # SECTION
+    # Display charts
     col1.subheader('Display charts')
     col1.code('''
     st.line_chart(data)
@@ -137,8 +137,10 @@ def cs_body():
     st.map(data)
     ''')
 
-    # Display media
 
+
+    # SECTION
+    # Display media
     col1.subheader('Display media')
     col1.code('''
     st.image('./header.png')
@@ -146,8 +148,10 @@ def cs_body():
     st.video(data)
     ''')
 
-    # Display interactive widgets
 
+
+    # SECTION
+    # Display interactive widgets
     col2.subheader('Display interactive widgets')
     col2.code('''
     st.button('Hit me')
@@ -168,59 +172,63 @@ def cs_body():
     ''')
     col2.write('Use widgets\' returned values in variables:')
     col2.code('''
->>> for i in range(int(st.number_input('Num:'))): foo()
->>> if st.sidebar.selectbox('I:',['f']) == 'f': b()
->>> my_slider_val = st.slider('Quinn Mallory', 1, 88)
->>> st.write(slider_val)
+    >>> for i in range(int(st.number_input('Num:'))): foo()
+    >>> if st.sidebar.selectbox('I:',['f']) == 'f': b()
+    >>> my_slider_val = st.slider('Quinn Mallory', 1, 88)
+    >>> st.write(slider_val)
     ''')
 
-    # Control flow
 
+
+    # SECTION
+    # Control flow
     col2.subheader('Control flow')
     col2.code('''
-st.stop()
+    st.stop()
     ''')
 
-    # Lay out your app
 
+
+    # SECTION
+    # Lay out your app
     col2.subheader('Lay out your app')
     col2.code('''
-st.form('my_form_identifier')
-st.form_submit_button('Submit to me')
-st.container()
-st.columns(spec)
->>> col1, col2 = st.columns(2)
->>> col1.subheader('Columnisation')
-st.expander('Expander')
->>> with st.expander('Expand'):
->>>     st.write('Juicy deets')
+    st.form('my_form_identifier')
+    st.form_submit_button('Submit to me')
+    st.container()
+    st.columns(spec)
+    >>> col1, col2 = st.columns(2)
+    >>> col1.subheader('Columnisation')
+    st.expander('Expander')
+    >>> with st.expander('Expand'):
+    >>>     st.write('Juicy deets')
     ''')
 
     col2.write('Batch widgets together in a form:')
     col2.code('''
->>> with st.form(key='my_form'):
->>> 	text_input = st.text_input(label='Enter some text')
->>> 	submit_button = st.form_submit_button(label='Submit')
+    >>> with st.form(key='my_form'):
+    >>> 	text_input = st.text_input(label='Enter some text')
+    >>> 	submit_button = st.form_submit_button(label='Submit')
     ''')
 
     # Display code
 
     col2.subheader('Display code')
     col2.code('''
-st.echo()
->>> with st.echo():
->>>     st.write('Code will be executed and printed')
+    st.echo()
+    >>> with st.echo():
+    >>>     st.write('Code will be executed and printed')
     ''')
 
     # Display progress and status
 
     col2.subheader('Other key parts of the API')
     col2.markdown('''
-<small>[State API](https://docs.streamlit.io/en/stable/session_state_api.html)</small><br>
-<small>[Theme option reference](https://docs.streamlit.io/en/stable/theme_options.html)</small><br>
-<small>[Components API reference](https://docs.streamlit.io/en/stable/develop_streamlit_components.html)</small><br>
-<small>[API cheat sheet](https://share.streamlit.io/daniellewisdl/streamlit-cheat-sheet/app.py)</small><br>
-''', unsafe_allow_html=True)
+    <small>[State API](https://docs.streamlit.io/en/stable/session_state_api.html)</small><br>
+    <small>[Theme option reference](https://docs.streamlit.io/en/stable/theme_options.html)</small><br>
+    <small>[Components API reference](https://docs.streamlit.io/en/stable/develop_streamlit_components.html)</small><br>
+    <small>[API cheat sheet](https://share.streamlit.io/daniellewisdl/streamlit-cheat-sheet/app.py)</small><br>
+    ''', unsafe_allow_html=True)
 #---------------------------------------------------------------------------------------------------------
     return None
 
@@ -228,8 +236,6 @@ st.echo()
 
 if __name__ == '__main__':
     main()
-
-
 
 
 
