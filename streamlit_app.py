@@ -73,11 +73,25 @@ def cs_sidebar():
 #---------------------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------------
 def cs_body():
-
     # DEFINE 
     col1, col2 = st.columns(2)
     # col1, col2 = st.columns(2) is the generic form 
     # col1.image(original, use_column_width=True)
+#---------------------------------------------------------------------------------------------------------
+    # SECTION
+    # starting 
+    col1.subheader('Fundamentals')
+    col1.code('''
+    pip install streamlit
+    import streamlit as st
+    streamlit --help
+    streamlit run your_script.py
+    streamlit hello
+    streamlit config show
+    streamlit cache clear
+    streamlit docs
+    streamlit --version
+    ''')
 #---------------------------------------------------------------------------------------------------------
     # SECTION
     col1.subheader('Display text')
