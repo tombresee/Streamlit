@@ -96,7 +96,7 @@ def cs_body():
     ''')
 #---------------------------------------------------------------------------------------------------------
     # # SECTION
-    col1.subheader('Code Snippets')
+    col1.subheader('Display Code Snippets')
     col1.code('''
     def hello():
         print("Hello, Streamlit!"), language="python"''')
@@ -113,7 +113,7 @@ def cs_body():
 #---------------------------------------------------------------------------------------------------------
     # SECTION
     # charts 
-    col1.subheader('Visulize Chart')
+    col1.subheader('Visualize a Chart')
     col1.code('''
     import pandas as pd
     import numpy as np
