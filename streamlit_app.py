@@ -81,6 +81,7 @@ def cs_body():
     # or could do col1. header('Something')
     # i am writting everything into code snippets, nice clean format 
     col1.code('''
+    # within container or section, enter:
     st.title('My title')
     st.header('My header')
     st.subheader('This is a subheader')
