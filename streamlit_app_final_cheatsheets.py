@@ -1,12 +1,6 @@
 """
-
-Author:    Tom Bresee
-Date:      Dec 25th, 2021
-Layouts:   https://blog.streamlit.io/introducing-new-layout-options-for-streamlit/
-
+Tom Bresee
 """
-
-
 
 
 #---------------------------------------------------------------------------------------------------------
@@ -71,100 +65,93 @@ def cs_sidebar():
 
     return None  # i think you have to return something, but None is fine 
 #---------------------------------------------------------------------------------------------------------
-#---------------------------------------------------------------------------------------------------------
 def cs_body():
 
     col1, col2 = st.columns(2)
-    # col1, col2 = st.columns(2) is the generic form 
-    # col1.image(original, use_column_width=True)
 
     col1.subheader('Magic commands')
 
     col1.code('''# Magic commands implicitly `st.write()`
-    \'\'\' _This_ is some __Markdown__ \'\'\'
-    a=3
-    'dataframe:', data
+\'\'\' _This_ is some __Markdown__ \'\'\'
+a=3
+'dataframe:', data
     ''')
-
-
 
 
 
     # Display text
 
     col1.subheader('Display text')
-    # or could do col1. header('Something')
     col1.code('''
-    st.text('Fixed width text')
-    st.markdown('_Markdown_') # see *
-    st.caption('Balloons. Hundreds of them...')
-    st.latex(r\'\'\' e^{i\pi} + 1 = 0 \'\'\')
-    st.write('Most objects') # df, err, func, keras!
-    st.write(['st', 'is <', 3]) # see *
-    st.title('My title')
-    st.header('My header')
-    st.subheader('My sub')
-    st.code('for i in range(8): foo()')
-    * optional kwarg unsafe_allow_html = True
+st.text('Fixed width text')
+st.markdown('_Markdown_') # see *
+st.caption('Balloons. Hundreds of them...')
+st.latex(r\'\'\' e^{i\pi} + 1 = 0 \'\'\')
+st.write('Most objects') # df, err, func, keras!
+st.write(['st', 'is <', 3]) # see *
+st.title('My title')
+st.header('My header')
+st.subheader('My sub')
+st.code('for i in range(8): foo()')
+* optional kwarg unsafe_allow_html = True
     ''')
-
 
     # Display data
 
     col1.subheader('Display data')
     col1.code('''
-    st.dataframe(my_dataframe)
-    st.table(data.iloc[0:10])
-    st.json({'foo':'bar','fu':'ba'})
-    st.metric(label="Temp", value="273 K", delta="1.2 K")
+st.dataframe(my_dataframe)
+st.table(data.iloc[0:10])
+st.json({'foo':'bar','fu':'ba'})
+st.metric(label="Temp", value="273 K", delta="1.2 K")
     ''')
 
     # Display charts
 
     col1.subheader('Display charts')
     col1.code('''
-    st.line_chart(data)
-    st.area_chart(data)
-    st.bar_chart(data)
-    st.pyplot(fig)
-    st.altair_chart(data)
-    st.vega_lite_chart(data)
-    st.plotly_chart(data)
-    st.bokeh_chart(data)
-    st.pydeck_chart(data)
-    st.deck_gl_chart(data)
-    st.graphviz_chart(data)
-    st.map(data)
+st.line_chart(data)
+st.area_chart(data)
+st.bar_chart(data)
+st.pyplot(fig)
+st.altair_chart(data)
+st.vega_lite_chart(data)
+st.plotly_chart(data)
+st.bokeh_chart(data)
+st.pydeck_chart(data)
+st.deck_gl_chart(data)
+st.graphviz_chart(data)
+st.map(data)
     ''')
 
     # Display media
 
     col1.subheader('Display media')
     col1.code('''
-    st.image('./header.png')
-    st.audio(data)
-    st.video(data)
+st.image('./header.png')
+st.audio(data)
+st.video(data)
     ''')
 
     # Display interactive widgets
 
     col2.subheader('Display interactive widgets')
     col2.code('''
-    st.button('Hit me')
-    st.download_button('On the dl', data)
-    st.checkbox('Check me out')
-    st.radio('Radio', [1,2,3])
-    st.selectbox('Select', [1,2,3])
-    st.multiselect('Multiselect', [1,2,3])
-    st.slider('Slide me', min_value=0, max_value=10)
-    st.select_slider('Slide to select', options=[1,'2'])
-    st.text_input('Enter some text')
-    st.number_input('Enter a number')
-    st.text_area('Area for textual entry')
-    st.date_input('Date input')
-    st.time_input('Time entry')
-    st.file_uploader('File uploader')
-    st.color_picker('Pick a color')
+st.button('Hit me')
+st.download_button('On the dl', data)
+st.checkbox('Check me out')
+st.radio('Radio', [1,2,3])
+st.selectbox('Select', [1,2,3])
+st.multiselect('Multiselect', [1,2,3])
+st.slider('Slide me', min_value=0, max_value=10)
+st.select_slider('Slide to select', options=[1,'2'])
+st.text_input('Enter some text')
+st.number_input('Enter a number')
+st.text_area('Area for textual entry')
+st.date_input('Date input')
+st.time_input('Time entry')
+st.file_uploader('File uploader')
+st.color_picker('Pick a color')
     ''')
     col2.write('Use widgets\' returned values in variables:')
     col2.code('''
@@ -226,42 +213,6 @@ st.echo()
 
 
 
+
 if __name__ == '__main__':
     main()
-
-
-
-
-
-
-
-
-#---------------------------------------------------------------------------------------------------------
-# APPENDIX: 
-#---------------------------------------------------------------------------------------------------------
-# COLUMNS
-
-# col1, col2 = st.columns(2)
-
-# original = Image.open(image)
-# col1.header("Original")
-# col1.image(original, use_column_width=True)
-
-# grayscale = original.convert('LA')
-# col2.header("Grayscale")
-# col2.image(grayscale, use_column_width=True)
-#---------------------------------------------------------------------------------------------------------
-
-#---------------------------------------------------------------------------------------------------------
-
-#---------------------------------------------------------------------------------------------------------
-
-#---------------------------------------------------------------------------------------------------------
-
-#---------------------------------------------------------------------------------------------------------
-
-#---------------------------------------------------------------------------------------------------------
-
-#---------------------------------------------------------------------------------------------------------
-
-
