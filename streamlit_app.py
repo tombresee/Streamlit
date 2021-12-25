@@ -84,22 +84,22 @@ def cs_body():
     # within container or section, enter:
     st.title('My title')
     st.header('My header')
-    st.subheader('This is a subheader')
-    st.text('Fixed width text')
-    st.markdown('_Markdown_') # markdown formatted text
+    st.subheader('My subheader')
+    st.text('My fixed width text')
+    st.markdown('_Markdown_')  # markdown formatted text
     st.markdown('Streamlit is **_really_ cool**.') 
     st.caption('My image caption')
-    # st.latex(r\'\'\' e^{i\pi} + 1 = 0 \'\'\')
+    st.latex(r\'\'\' e^{i\pi} + 1 = 0 \'\'\')
     st.write('anything') # words, dataframe, plots
     st.write(['st', 'is <', 3])
     st.code('for i in range(8): foo()')
     ''')
 #---------------------------------------------------------------------------------------------------------
     # # SECTION
-    # col1.subheader('Code Snippets')
-    # col1.code("""
-    # def hello():
-    # print("Hello, Streamlit!"), language='python'""")
+    col1.subheader('Code Snippets')
+    col1.code('''
+    def hello():
+        print("Hello, Streamlit!"), language="python"''')
 #---------------------------------------------------------------------------------------------------------
     # SECTION
     # Display data
