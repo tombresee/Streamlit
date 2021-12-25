@@ -83,14 +83,13 @@ def cs_body():
     col1.subheader('Fundamentals')
     col1.code('''
     pip install streamlit
-    import streamlit as st
-    streamlit --help
+    import streamlit as st  # top of code 
+    streamlit --help # command line
+    streamlit --version
     streamlit run your_script.py
-    streamlit hello
     streamlit config show
     streamlit cache clear
     streamlit docs
-    streamlit --version
     ''')
 #---------------------------------------------------------------------------------------------------------
     # SECTION
