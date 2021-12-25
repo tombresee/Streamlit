@@ -99,10 +99,8 @@ def cs_body():
     # SECTION
     col1.subheader('Code Snippets')
     col1.code('''
-    code = '''def hello():
-    print("Hello, Streamlit!")'''
-    st.code(code, language='python')
-    ''')
+    def hello():
+        print("Hello, Streamlit!")''', language='python')
 
 
 
