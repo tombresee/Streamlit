@@ -280,10 +280,44 @@ def cs_main_body():
 #---------------------------------------------------------------------------------------------------------
     # STAND ALONE BELOW EVERYTHING:
     st.latex(r'''
-     a + ar + a r^2 + a r^3 + \cdots + a r^{n-1} =
-     \sum_{k=0}^{n-1} ar^k =
-     a \left(\frac{1-r^{n}}{1-r}\right)
-     ''')
+     \documentclass{article}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usetikzlibrary{tikzmark}
+
+\usepackage{lipsum}
+\begin{document}
+\lipsum[66]
+\[
+\underbrace{\text{New }Q(s,a)}_{\substack{\text{New}\\
+                                          \text{Q-Value}}}
+    = \underbrace{Q(s,a)}_{\substack{\text{Current}\\
+                                     \text{Q-Value}}}
+    + \tikzmarknode{A}{\alpha}
+    \Bigl[
+        \underbrace{R(s,a)}_{\text{Reward}}
+    + \tikzmarknode{B}{\gamma}
+        \overbrace{\max Q'(s',a')}^{\mathclap{%
+            \substack{\text{Maximum predicted reward, given} \\
+                      \text{new state and all possible actions}}
+                                            }}
+    - Q(s,a)
+    \Bigr]
+\begin{tikzpicture}[overlay, remember picture,shorten <=1mm, font=\footnotesize, align=center]
+\draw (A.south) -- ++ (0,-.8) node (C) [below] {Learning\\ rate};
+\draw (B.south) -- (B |- C.north)  node[below] {Discount\\ rate};
+\end{tikzpicture}
+\vspace{4ex}
+\]
+\lipsum[66]
+\end{document}''')
+
+    
+
+# a + ar + a r^2 + a r^3 + \cdots + a r^{n-1} =
+#      \sum_{k=0}^{n-1} ar^k =
+#      a \left(\frac{1-r^{n}}{1-r}\right)
+#      ''')
 
 
     return None
