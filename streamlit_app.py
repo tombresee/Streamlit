@@ -71,7 +71,11 @@ def cs_sidebar():
 
     return None  # i think you have to return something, but None is fine 
 #---------------------------------------------------------------------------------------------------------
-st.sidebar.subheader('Streamlit cheat sheet')
+# TEMPORARY SIDEBAR WORK:
+st.sidebar.header('Streamlit cheat sheet')
+st.sidebar.markdown('__Pre-release features__')
+
+
 
 #---------------------------------------------------------------------------------------------------------
 def cs_body():
