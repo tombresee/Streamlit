@@ -257,11 +257,6 @@ def cs_main_body():
     # >>> with st.expander('Expand'):
     # >>>     st.write('Juicy deets')
     # ''')
-    col2.st.latex(r'''
-     a + ar + a r^2 + a r^3 + \cdots + a r^{n-1} =
-     \sum_{k=0}^{n-1} ar^k =
-     a \left(\frac{1-r^{n}}{1-r}\right)
-     ''')
 #---------------------------------------------------------------------------------------------------------
     # SECTION
     # Display code
@@ -282,6 +277,15 @@ def cs_main_body():
     <small>[API cheat sheet](https://share.streamlit.io/daniellewisdl/streamlit-cheat-sheet/app.py)</small><br>
     ''', unsafe_allow_html=True)
 #---------------------------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------
+    # STAND ALONE BELOW EVERYTHING:
+    st.latex(r'''
+     a + ar + a r^2 + a r^3 + \cdots + a r^{n-1} =
+     \sum_{k=0}^{n-1} ar^k =
+     a \left(\frac{1-r^{n}}{1-r}\right)
+     ''')
+
+
     return None
 #---------------------------------------------------------------------------------------------------------
 
