@@ -1,3 +1,6 @@
+#---------------------------------------------------------------------------------------------------------
+
+
 """
 
 Author:    Tom Bresee
@@ -8,10 +11,6 @@ Status:    This is the latest streamlist app showing at:  https://share.streamli
 """
 
 
-
-
-
-
 #---------------------------------------------------------------------------------------------------------
 import streamlit as st
 from pathlib import Path
@@ -20,11 +19,11 @@ import base64
 st.set_page_config(
      page_title='Streamlit Commands',
      layout="wide",
-     initial_sidebar_state="expanded",)
+     initial_sidebar_state="expanded",)  # or initial sidebard doesn't have to be 
 #---------------------------------------------------------------------------------------------------------
 def main():
-    cs_sidebar()
-    cs_body()  # right now, only using cs_body(), not sidebar yet... 
+    cs_sidebar()      # so it is defined, but doesn't have to be used ! 
+    cs_main_body()    
     return None
 #---------------------------------------------------------------------------------------------------------
 def img_to_bytes(img_path):
@@ -38,36 +37,22 @@ def cs_sidebar():
 #     <small>Summary of the [docs](https://docs.streamlit.io/en/stable/api.html), as of [Streamlit v1.0.0](https://www.streamlit.io/).</small>
 #     ''', unsafe_allow_html=True)
 
-#     st.sidebar.markdown('__How to install and import__')
-
 #     st.sidebar.code('$ pip install streamlit')
 
 #     st.sidebar.markdown('Import convention')
 
 #     st.sidebar.markdown('__Add widgets to sidebar__')
 
-#     st.sidebar.markdown('__Command line__')
-
-#     st.sidebar.code('''
-#     $ streamlit --help
-#     $ streamlit run your_script.py
-#     $ streamlit hello
-#     $ streamlit config show
-#     $ streamlit cache clear
-#     $ streamlit docs α β
-#     $ streamlit --version
-#     ''')
-
 #     st.sidebar.markdown('__Pre-release features__')
 
 #     st.sidebar.markdown('[Beta and experimental features](https://docs.streamlit.io/en/stable/api.html#beta-and-experimental-features)')
 
 #     st.sidebar.code('''
-# pip uninstall streamlit
-# pip install streamlit-nightly --upgrade
+#     pip uninstall streamlit
+#     pip install streamlit-nightly --upgrade
 #     ''')
 
-#     st.sidebar.markdown('''<small>[st.cheat_sheet v1.0.0](https://github.com/daniellewisDL/streamlit-cheat-sheet)  | Oct 2021</small>''', unsafe_allow_html=True)
+    st.sidebar.markdown('''<small>[st.cheat_sheet v1.0.0](https://github.com/daniellewisDL/streamlit-cheat-sheet)  | Oct 2021</small>''', unsafe_allow_html=True)
 
     return None  # i think you have to return something, but None is fine 
 #---------------------------------------------------------------------------------------------------------
@@ -78,7 +63,7 @@ st.sidebar.markdown('Pre-release features')
 
 
 #---------------------------------------------------------------------------------------------------------
-def cs_body():
+def cs_main_body():
     # DEFINE 
     col1, col2 = st.columns(2)
     # col1, col2 = st.columns(2) is the generic form 
