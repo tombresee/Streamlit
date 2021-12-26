@@ -60,9 +60,7 @@ def cs_sidebar():
 st.sidebar.header('Streamlit cheat sheet')
 st.sidebar.markdown('Pre-release features')
 st.sidebar.markdown('Author:  Tom Bresee')
-st.sidebar.error('This is an error')
-
-
+# st.sidebar.error('This is an error')
 
 
 #---------------------------------------------------------------------------------------------------------
@@ -167,9 +165,12 @@ def cs_main_body():
 #---------------------------------------------------------------------------------------------------------
     # SECTION
     # Display media
-    col1.subheader('Status Messages')
+    col1.subheader('Status elements')
     col1.code('''
-    st.error('This is an error')  # display read message
+    st.error('This is an error')     # error (red) display message
+    st.warning('This is a warning')  # warning (yellow) display message
+    st.info('This is an informational message') # info (blue) display message
+    st.success('This is a success message!')    # success (green) display message
     ''')
 #---------------------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------------
