@@ -245,6 +245,26 @@ def cs_main_body():
     ''')
 #---------------------------------------------------------------------------------------------------------
     # SECTION
+    col2.subheader('Equations')
+    # col2.code('''
+    # st.form('my_form_identifier')
+    # st.form_submit_button('Submit to me')
+    # st.container()
+    # st.columns(spec)
+    # >>> col1, col2 = st.columns(2)
+    # >>> col1.subheader('Columnisation')
+    # st.expander('Expander')
+    # >>> with st.expander('Expand'):
+    # >>>     st.write('Juicy deets')
+    # ''')
+    st.latex(r'''
+     a + ar + a r^2 + a r^3 + \cdots + a r^{n-1} =
+     \sum_{k=0}^{n-1} ar^k =
+     a \left(\frac{1-r^{n}}{1-r}\right)
+     ''')
+
+#---------------------------------------------------------------------------------------------------------
+    # SECTION
     # Display code
     col2.subheader('Display code')
     col2.code('''
@@ -265,6 +285,8 @@ def cs_main_body():
 #---------------------------------------------------------------------------------------------------------
     return None
 #---------------------------------------------------------------------------------------------------------
+
+
 
 #---------------------------------------------------------------------------------------------------------
 if __name__ == '__main__':
