@@ -291,7 +291,14 @@ def cs_main_body():
     a \left(\frac{1-r^{n}}{1-r}\right)
     ''')
 
-    
+    st.latex(r'''
+   {\bf SARSA:} on-policy greedy control
+   \[Q(s_t,a_t)\;\leftarrow\;Q(s_t,a_t) + \alpha [ r_{t+1} + \gamma \; Q(s_{t+1},a_{t+1}) - Q(s_t,a_t) ]\]
+   ''')
+
+
+
+
     return None
 #---------------------------------------------------------------------------------------------------------
 
