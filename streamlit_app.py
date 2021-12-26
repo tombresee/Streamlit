@@ -15,6 +15,8 @@ Status:    This is the latest streamlist app showing at:  https://share.streamli
 import streamlit as st
 from pathlib import Path
 import base64
+import numpy as np
+import pandas as pd
 #---------------------------------------------------------------------------------------------------------
 st.set_page_config(
      page_title='Streamlit Commands',
@@ -70,6 +72,15 @@ st.table(dataframe)
 
 #---------------------------------------------------------------------------------------------------------
 def cs_main_body():
+
+
+    map_data = pd.DataFrame(
+    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+    columns=['lat', 'lon'])
+
+    st.map(map_data)
+
+
     # DEFINE 
     col1, col2 = st.columns(2)
     # col1, col2 = st.columns(2) is the generic form 
