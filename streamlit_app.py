@@ -34,42 +34,37 @@ def img_to_bytes(img_path):
     return encoded
 #---------------------------------------------------------------------------------------------------------
 def cs_sidebar():
-#     st.sidebar.header('Streamlit cheat sheet')
-#     st.sidebar.markdown('''
-#     <small>Summary of the [docs](https://docs.streamlit.io/en/stable/api.html), as of [Streamlit v1.0.0](https://www.streamlit.io/).</small>
-#     ''', unsafe_allow_html=True)
+    #     st.sidebar.header('Streamlit cheat sheet')
+    #     st.sidebar.markdown('''
+    #     <small>Summary of the [docs](https://docs.streamlit.io/en/stable/api.html), as of [Streamlit v1.0.0](https://www.streamlit.io/).</small>
+    #     ''', unsafe_allow_html=True)
 
-#     st.sidebar.code('$ pip install streamlit')
+    #     st.sidebar.code('$ pip install streamlit')
 
-#     st.sidebar.markdown('Import convention')
+    #     st.sidebar.markdown('Import convention')
 
-#     st.sidebar.markdown('__Add widgets to sidebar__')
+    #     st.sidebar.markdown('__Add widgets to sidebar__')
 
-#     st.sidebar.markdown('__Pre-release features__')
+    #     st.sidebar.markdown('__Pre-release features__')   
 
-#     st.sidebar.markdown('[Beta and experimental features](https://docs.streamlit.io/en/stable/api.html#beta-and-experimental-features)')
+    #     st.sidebar.markdown('[Beta and experimental features](https://docs.streamlit.io/en/stable/api.html#beta-and-experimental-features)')
 
-#     st.sidebar.code('''
-#     pip uninstall streamlit
-#     pip install streamlit-nightly --upgrade
-#     ''')
+    #     st.sidebar.code('''
+    #     pip uninstall streamlit
+    #     pip install streamlit-nightly --upgrade
+    #     ''')
+    st.sidebar.header('Streamlit cheat sheet')
+    st.sidebar.markdown('Pre-release features')
+    st.sidebar.markdown('Author:  Tom Bresee')
+    # st.sidebar.error('This is an error')
 
+    # dataframe = pd.DataFrame(
+    #      np.random.randn(10, 20),
+    #     columns=('col %d' % i for i in range(20)))
+    # st.table(dataframe)
     st.sidebar.markdown('''<small>[st.cheat_sheet v1.0.0](https://github.com/daniellewisDL/streamlit-cheat-sheet)  | Oct 2021</small>''', unsafe_allow_html=True)
-
     return None  # i think you have to return something, but None is fine 
 #---------------------------------------------------------------------------------------------------------
-# TEMPORARY SIDEBAR WORK:
-st.sidebar.header('Streamlit cheat sheet')
-st.sidebar.markdown('Pre-release features')
-st.sidebar.markdown('Author:  Tom Bresee')
-# st.sidebar.error('This is an error')
-
-dataframe = pd.DataFrame(
-    np.random.randn(10, 20),
-    columns=('col %d' % i for i in range(20)))
-st.table(dataframe)
-
-
 #---------------------------------------------------------------------------------------------------------
 def cs_main_body():
 
