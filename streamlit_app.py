@@ -73,7 +73,7 @@ def cs_sidebar():
 #---------------------------------------------------------------------------------------------------------
 # TEMPORARY SIDEBAR WORK:
 st.sidebar.header('Streamlit cheat sheet')
-st.sidebar.markdown('__Pre-release features__')
+st.sidebar.markdown('Pre-release features')
 
 
 
