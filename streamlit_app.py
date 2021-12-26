@@ -60,6 +60,8 @@ def cs_sidebar():
 st.sidebar.header('Streamlit cheat sheet')
 st.sidebar.markdown('Pre-release features')
 st.sidebar.markdown('Author:  Tom Bresee')
+st.error('This is an error')
+
 
 
 
