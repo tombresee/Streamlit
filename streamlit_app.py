@@ -62,6 +62,11 @@ st.sidebar.markdown('Pre-release features')
 st.sidebar.markdown('Author:  Tom Bresee')
 # st.sidebar.error('This is an error')
 
+dataframe = pd.DataFrame(
+    np.random.randn(10, 20),
+    columns=('col %d' % i for i in range(20)))
+st.table(dataframe)
+
 
 #---------------------------------------------------------------------------------------------------------
 def cs_main_body():
